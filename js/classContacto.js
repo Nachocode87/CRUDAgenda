@@ -3,14 +3,14 @@ export default class Contacto {
   #nombre;
   #apellido;
   #email;
-  #celular;
+  #telefono;
 
-  constructor(id = 1, nombre, apellido, email, celular) {
+  constructor(id = crypto.randomUUID(), nombre, apellido, email, telefono) {
     this.#id = id;
     this.#nombre = nombre;
     this.#apellido = apellido;
     this.#email = email;
-    this.#celular = celular;
+    this.#telefono = telefono;
   }
 
   get id() {
@@ -41,12 +41,12 @@ export default class Contacto {
     this.#email = nuevoEmail;
   }
 
-  get celular() {
-    return this.#celular;
+  get telefono() {
+    return this.#telefono;
   }
 
-  set celular(nuevoCelular) {
-    this.#celular = nuevoCelular;
+  set telefono(nuevotelefono) {
+    this.#telefono = nuevotelefono;
   }
   //este metodo sirve para el objeto JSON.stringify
   toJSON() {
@@ -55,7 +55,7 @@ export default class Contacto {
       nombre: this.nombre,
       apellido: this.apellido,
       email: this.email,
-      celular: this.celular,
+      telefono: this.telefono,
     };
   }
 }
